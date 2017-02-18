@@ -1,0 +1,145 @@
+html,body {
+	background-attachment: fixed;
+	background-size:cover;
+    margin:0;
+    padding:0;
+	height:100%;
+	font-size:15px;
+}
+
+#container {
+	min-height:100%;
+	position: relative;
+}
+
+/* 页眉 */
+#header {
+	background:rgba(0,0,0, .6);
+}
+/* main menu styles */
+#nav {
+    display:inline-block;
+    margin:0;
+    padding:0 0 0 200px;
+}
+#nav li {
+    margin:0;
+	padding:0;
+    float:left;
+    position:relative;
+    list-style:none;
+}
+#nav a {
+    color:#E7E5E5;
+    text-decoration:none;
+    display:block;
+    padding:15px 35px;
+	transition:background 0.5s;
+}
+
+/* selected menu element */
+#nav .current a {
+    background:rgba(138,43,226, .8);
+}
+#nav li:hover > a {
+    background:rgba(138,43,226, .7);
+}
+
+
+/* sublevels */
+#nav ul li:hover a, #nav li:hover li a {
+    background:none;
+    border:none;
+    color:#000;
+}
+#nav ul li a:hover {
+    background:rgba(255,0,0, .6);
+    border-radius:0px 0px 10px 10px;
+}
+
+/* drop down */
+#nav li:hover > ul {
+    opacity:1;
+    visibility:visible;
+}
+#nav ul {
+    opacity:0;
+    visibility:hidden;
+    padding:0;
+    width:150px;
+    position:absolute;
+    background:rgba(255,255,255, .9);
+    border:1px solid #7788AA;
+    border-radius:0 0 10px 10px;
+}
+#nav ul li {
+    float:none;
+    margin:0;
+}
+#nav ul a {
+    font-weight:normal;
+}
+#nav ul ul {
+    left:160px;
+    top:0px;
+}
+
+/* 主体 */
+#page {
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 180px;
+}
+
+#left {
+	width:600px;
+	margin:50px 0 0 120px;
+	background:rgba(246,244,236, .5);
+	padding:50px 80px 50px 80px;
+	text-indent:30px;
+	word-wrap:break-word;
+	border-radius:20px;
+	transition:background 1s;
+}
+#left:hover {
+	background:rgba(246,244,236, .9);
+}
+
+#left a:link, #left a:visited, #left a:hover, #left a:active {
+    text-decoration:none;
+	display:block;
+	color:#6633FF;
+}
+
+#subtitle1 {
+	margin:20px 0 20px 0;
+	text-align: center;
+	font-size:30px;
+}
+#subtitle2 {
+	margin:20px 0 20px 0;
+	text-indent:0;
+	font-size:25px;
+}
+
+/* 页脚 */
+#footer {
+	position: absolute;
+	bottom:0;
+	width:100%;
+	height:60px;
+	font-size:12px;
+	text-align:center;
+	color:#E7E5E5;
+}
+
+/* 雪花 */
+.snow-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	pointer-events: none;
+}

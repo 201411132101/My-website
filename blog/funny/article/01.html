@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>My Website</title>
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+<!--css-->
+<link href="../../../css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body { 
+	background-image:url(../../../images/bg-certificate.jpg);
+	background-color:black;
+}
+</style>
+
+<!--js-->
+<script type="text/javascript" src="../../../js/title.js"></script>
+<script type="text/javascript" src="../../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../js/snow-plugin.js"></script> 
+<script type="text/javascript" src="../../../js/right-click.js"></script> 
+</head>
+
+<body onmousedown="mouseDown()">
+<div id="container">
+	<div id="header">
+		<ul id="nav">
+			<li><a href="../../../index.html">首页</a></li>
+			<li class="current"><a href="javascript:void(0)">博客</a>
+				<ul>
+					<li><a href="javascript:void(0)">画图</a></li> 
+					<li><a href="javascript:void(0)">分形几何</a></li>
+					<li><a href="javascript:void(0)">图像处理</a></li>
+					<li><a href="javascript:void(0)">数据处理</a></li>
+					<li><a href="javascript:void(0)">matlab函数源代码分析</a></li>
+					<li><a href="../index.html">黑科技</a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:void(0)">折纸</a>
+				<ul>
+					<li><a href="javascript:void(0)">基础知识</a></li>
+					<li><a href="javascript:void(0)">折纸实例</a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:void(0)">动漫</a>
+				<ul>
+					<li><a href="../../../animation/recommend/index.html">动漫推荐</a></li>
+					<li><a href="javascript:void(0)">漫展收获</a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:void(0)">钉宫教你学五十音</a></li>
+			<li><a href="../../../website/index.html">网站推荐</a></li>
+		</ul>
+	</div>
+	
+	<div id="page">
+		<div id="left">
+			<div id="subtitle1">从P站搜索高质量图片</div>
+			<p>在作品名后面加xxx users入り就能搜到高收藏量的文章。
+			作品名必须是日文，xxx必须是50，100，300，500，1000，5000，10000中的一个（我猜的）。</p>
+			<p>例：とらドラ!5000users入り。</p>
+		</div>
+	</div>
+	
+	<div id="footer">
+		本网站是各种demo修改拼接而成，如有雷同，实属正常
+	</div>
+</div>
+
+<!--music-->
+<audio id="mylove" src="../../../audio/brother.mp3">
+	Your browser does not support HTML5 audio.
+</audio>
+
+<!--bg-snow-->
+<canvas class="snow-canvas" speed="1" interaction="false" size="2" count="80" opacity="0.00001" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1366" height="667"></canvas>
+ 
+<canvas class="snow-canvas" speed="2" interaction="true" size="6" count="30" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false" width="1366" height="667"></canvas>
+ 
+<canvas class="snow-canvas" speed="3" interaction="true" size="12" count="20" wind-power="-5" image="../../../images/snow.png" width="1366" height="667"></canvas> 
+<script type="text/javascript">
+$(".snow-canvas").snow();
+</script>
+</body>
+
+</html>
