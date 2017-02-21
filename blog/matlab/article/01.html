@@ -12,6 +12,7 @@
 
 <!--css-->
 <link href="https://201411132101.github.io/bufan/css/style.css" rel="stylesheet" type="text/css" />
+<link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body { 
 	background-image:url(https://201411132101.github.io/bufan/images/bg-main.jpg);
@@ -32,8 +33,8 @@ body {
 <div id="container">
 	<div id="header">
 		<ul id="nav">
-			<li class="current"><a href="https://201411132101.github.io/bufan">首页</a></li>
-			<li><a href="javascript:void(0)">博客</a>
+			<li><a href="https://201411132101.github.io/bufan">首页</a></li>
+			<li class="current"><a href="javascript:void(0)">博客</a>
 				<ul>
 					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li> 
 					<li><a href="https://201411132101.github.io/bufan/blog/fractal">分形几何</a></li>
@@ -63,7 +64,67 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<p>待补</p>
+			<div id = "subtitle1"><p>polyfit</p><div>
+			<pre><code class="matlab">function [p,S,mu] = polyfit(x,y,n)
+
+if ~isequal(size(x),size(y))
+    error('MATLAB:polyfit:XYSizeMismatch',...
+          'X and Y vectors must be the same size.')
+end
+
+x = x(:);
+y = y(:);
+
+if nargout > 2
+   mu = [mean(x); std(x)];
+   x = (x - mu(1))/mu(2);
+end
+
+% Construct Vandermonde matrix.
+V(:,n+1) = ones(length(x),1,class(x));
+for j = n:-1:1
+   V(:,j) = x.*V(:,j+1);
+end
+
+% Solve least squares problem.
+[Q,R] = qr(V,0);
+ws = warning('off','all'); 
+p = R\(Q'*y);    % Same as p = V\y;
+warning(ws);
+if size(R,2) > size(R,1)
+   warning('MATLAB:polyfit:PolyNotUnique', ...
+       'Polynomial is not unique; degree >= number of data points.')
+elseif warnIfLargeConditionNumber(R)
+    if nargout > 2
+        warning('MATLAB:polyfit:RepeatedPoints', ...
+                ['Polynomial is badly conditioned. Add points with distinct X\n' ...
+                 '         values or reduce the degree of the polynomial.']);
+    else
+        warning('MATLAB:polyfit:RepeatedPointsOrRescale', ...
+                ['Polynomial is badly conditioned. Add points with distinct X\n' ...
+                 '         values, reduce the degree of the polynomial, or try centering\n' ...
+                 '         and scaling as described in HELP POLYFIT.']);
+    end
+end
+
+if nargout > 1
+    r = y - V*p;
+    % S is a structure containing three elements: the triangular factor from a
+    % QR decomposition of the Vandermonde matrix, the degrees of freedom and
+    % the norm of the residuals.
+    S.R = R;
+    S.df = max(0,length(y) - (n+1));
+    S.normr = norm(r);
+end
+
+p = p.';          % Polynomial coefficients are row vectors by convention.
+
+function flag = warnIfLargeConditionNumber(R)
+if isa(R, 'double')
+    flag = (condest(R) > 1e+10);
+else
+    flag = (condest(R) > 1e+05);
+end</code></pre>
 		</div>
 	</div>
 	
@@ -89,6 +150,12 @@ image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height
 <script type="text/javascript">
 $(".snow-canvas").snow();
 </script>
+
+<!--code -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script> 
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script> 
 </body>
 
 </html>

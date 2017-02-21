@@ -9,7 +9,7 @@ html,body {
 
 #container {
 	min-height:100%;
-	position: relative;
+	position:relative;
 }
 
 /* 页眉 */
@@ -111,13 +111,16 @@ html,body {
 	color:#6633FF;
 }
 
+/* 各级标题 */
 #subtitle1 {
 	margin:20px 0 20px 0;
+	padding:0;
 	text-align: center;
 	font-size:30px;
 }
 #subtitle2 {
 	margin:20px 0 20px 0;
+	padding:0;
 	text-indent:0;
 	font-size:25px;
 }
