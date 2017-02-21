@@ -64,8 +64,9 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id = "subtitle1"><p>polyfit</p><div>
-			<pre><code class="matlab">function [p,S,mu] = polyfit(x,y,n)
+			<div id = "subtitle1"><p>polyfit</p></div>
+			<pre><code class="matlab">
+function [p,S,mu] = polyfit(x,y,n)
 
 if ~isequal(size(x),size(y))
     error('MATLAB:polyfit:XYSizeMismatch',...
