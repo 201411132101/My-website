@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>My Website</title>
+<title>blog</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -32,8 +32,8 @@ body {
 <div id="container">
 	<div id="header">
 		<ul id="nav">
-			<li class="current"><a href="https://201411132101.github.io/bufan">首页</a></li>
-			<li><a href="javascript:void(0)">博客</a>
+			<li><a href="https://201411132101.github.io/bufan">首页</a></li>
+			<li class="current"><a href="javascript:void(0)">博客</a>
 				<ul>
 					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li> 
 					<li><a href="https://201411132101.github.io/bufan/blog/fractal">分形几何</a></li>
@@ -63,7 +63,13 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<p>待补</p>
+			<div id="subtitle1"><p>数据标准化</p></div>		 
+		
+			<div id="subtitle2"><p>一、z-score 标准化</p></div>
+		    <p>对于集合$S$，求出所有元素的平均值$\overline x$和方差$\sigma$，再对于$S$中的每个元素$x$根据公式</p>
+            <p>$$x'=\frac{x-\overline x}{\sigma}$$</p>
+		    <p>对数据进行标准化。</p>
+		    <p>matlab中相应函数为zscore。</p>
 		</div>
 	</div>
 	
@@ -88,6 +94,17 @@ end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false"
 image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height="667"></canvas> 
 <script type="text/javascript">
 $(".snow-canvas").snow();
+</script>
+
+
+<!--mathjax -->
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
 </script>
 </body>
 

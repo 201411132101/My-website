@@ -5,6 +5,8 @@ html,body {
     padding:0;
 	height:100%;
 	font-size:15px;
+	
+	::-webkit-scrollbar{width:0px;}
 }
 
 #container {
@@ -92,14 +94,14 @@ html,body {
 }
 
 #left {
-	width:700px;
+	width:650px;
 	margin:50px 0 0 120px;
 	background:rgba(246,244,236, .5);
 	padding:50px 80px 50px 80px;
 	text-indent:30px;
 	word-wrap:break-word;
 	border-radius:20px;
-	transition:background 1s;
+	transition:background 0.5s;
 }
 #left:hover {
 	background:rgba(246,244,236, .9);

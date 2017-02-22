@@ -6,12 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>My Website</title>
+<title>blog</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
 <!--css-->
 <link href="https://201411132101.github.io/bufan/css/style.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body { 
 	background-image:url(https://201411132101.github.io/bufan/images/bg-main.jpg);
@@ -63,7 +64,32 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<p>待补</p>
+			<div id = "subtitle1"><p>图像小波分解示意图</p></div>
+			
+			<p style="text-align:center"><img src="images/01.png" width="500"></p>
+			<pre><code class="matlab">
+fig = figure('NumberTitle', 'off', 'name', 'Happy');      
+hold on;  
+  
+LineWidth = 2;      
+FontSize = 18;      
+MarkerSize = 3;      
+      
+plot([0 0 8 8 0], [0 8 8 0 0], 'k', 'LineWidth', LineWidth);  
+plot([4 4], [0 8], 'k', 'LineWidth', LineWidth);   
+plot([0 8], [4 4], 'k', 'LineWidth', LineWidth);  
+plot([2 2], [4 8], 'k', 'LineWidth', LineWidth);   
+plot([0 4], [6 6], 'k', 'LineWidth', LineWidth);  
+      
+text(1, 7, 'A', 'FontSize', FontSize, 'FontWeight', 'bold', 'HorizontalAlignment', 'center');      
+for i = 0 : 1  
+    text(3+i*3, 7-i, ['H' num2str(i+1)], 'FontSize', FontSize, 'FontWeight', 'bold', 'HorizontalAlignment', 'center');      
+    text(1+i, 5-i*3, ['V' num2str(i+1)], 'FontSize', FontSize, 'FontWeight', 'bold', 'HorizontalAlignment', 'center');      
+    text(3+i*3, 5-i*3, ['D' num2str(i+1)], 'FontSize', FontSize, 'FontWeight', 'bold', 'HorizontalAlignment', 'center');      
+end      
+  
+axis equal;      
+axis off;</code></pre>
 		</div>
 	</div>
 	
@@ -89,6 +115,12 @@ image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height
 <script type="text/javascript">
 $(".snow-canvas").snow();
 </script>
+
+<!--code -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script> 
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script> 
 </body>
 
 </html>
