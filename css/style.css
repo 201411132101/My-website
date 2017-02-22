@@ -108,6 +108,9 @@ html,body {
 #left:hover {
 	background:rgba(246,244,236, .9);
 }
+#left pre {
+	text-indent:0;
+}
 
 #left a:link, #left a:visited, #left a:hover, #left a:active {
     text-decoration:none;
@@ -120,6 +123,7 @@ html,body {
 	margin:20px 0 20px 0;
 	padding:0;
 	text-align: center;
+	text-indent:0;
 	font-size:30px;
 }
 #subtitle2 {
