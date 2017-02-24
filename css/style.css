@@ -27,6 +27,8 @@ pre {
 /* 页眉 */
 #header {
 	background:rgba(0,0,0, .6);
+	position:absolute;
+	zindex:999;
 }
 /* main menu styles */
 #nav {
@@ -63,7 +65,6 @@ pre {
     background:none;
     border:none;
     color:#000;
-	zindex:999;
 }
 #nav ul li a:hover {
     background:rgba(255,0,0, .6);
