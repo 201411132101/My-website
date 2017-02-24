@@ -84,7 +84,8 @@ end
 % 如果m>n，则取Q的前n列，R的前m行
 [Q,R] = qr(V,0);
 
-p = R\(Q'*y);</code></pre>
+p = R\(Q'*y);
+p = p';</code></pre>
 			
 			<div id = "subtitle2"><p>完整版</p></div>
 			<pre><code class="matlab">function [p,S,mu] = polyfit(x,y,n)
