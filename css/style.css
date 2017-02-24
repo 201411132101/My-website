@@ -7,10 +7,6 @@ html,body {
 	font-size:15px;	
 }
 
-pre {
-	max-height：800px;
-}
-
 #image {
 	text-align:center;
 }
@@ -33,8 +29,6 @@ pre {
     display:inline-block;
     margin:0;
     padding:0 0 0 200px;
-	position:absolute;
-	zindex:999;
 }
 #nav li {
     margin:0;
@@ -82,6 +76,7 @@ pre {
     padding:0;
     width:150px;
     position:absolute;
+	z-index:999;
     background:rgba(255,255,255, .9);
     border:1px solid #7788AA;
     border-radius:0 0 10px 10px;
