@@ -7,7 +7,11 @@ html,body {
 	font-size:15px;	
 }
 
-::-webkit-scrollbar{width:5px;}
+#image {
+	text-align:center;
+}
+
+::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-track{background-color:#bee1eb;}
 ::-webkit-scrollbar-thumb{background-color:#00aff0;}
 
@@ -96,11 +100,10 @@ html,body {
 }
 
 #left {
-	width:650px;
+	width:600px;
 	margin:50px 0 0 120px;
 	background:rgba(246,244,236, .5);
 	padding:50px 80px 50px 80px;
-	text-indent:30px;
 	word-wrap:break-word;
 	border-radius:20px;
 	transition:background 0.5s;
@@ -108,8 +111,8 @@ html,body {
 #left:hover {
 	background:rgba(246,244,236, .9);
 }
-#left pre {
-	text-indent:0;
+#left p {
+	text-indent:30px;
 }
 
 #left a:link, #left a:visited, #left a:hover, #left a:active {
