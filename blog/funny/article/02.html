@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>Sierpinski三角形</title>
+<title>批量修改文件名</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -64,58 +64,60 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle1">Sierpinski三角形</div>
-			<p>有意思的是，Sierpinski三角形和杨辉三角的01表示是对应的。</p>
-			<p>基本单位是三角形，对于原三角形，删去各边中点构成的小三角形，不断重复下去。</p>
-			
-			<div id="image"><img src="images/01.jpg" width="300px"></div>
-			<pre><code class="matlab">function draw_Sierpinski_Triangle3D(P1, P2, P3, P4, N, options)
+			<div id="subtitle1">批量修改文件名</div>
+			<p>研究这东西单纯的是为了看番用的，外挂字幕必须要名字相同，这点好烦。</p>
+			<p>核心是doc命令中的ren，要注意如果名字有空格的话，必须用双引号括起来。</p>
+			<pre><code class="c++">#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+#include &lt;algorithm&gt;
+using namespace std;
 
-% Sierpinski_Triangle 的基本单位是三棱锥
-% P1, P2，P3, P4是三棱锥的四顶点(必须是1*3的向量)，N是递归层数
-% options：三棱柱表面颜色
+string int2string(int n, int bit)
+{
+    string s;
+    for(int i = 0; i &lt; bit; i++)
+        s.push_back(n % 10 + '0'), n /= 10;
+    reverse(s.begin(), s.end());
+    return s;
+}
 
-default_options = [0 1 0];
-if nargin == 5
-    options = default_options;
-end
-Color = options;
+int main()
+{
+    system("dir /b &gtfile_directory.txt");
 
-if N == 1
-    plane = [[P1; P2; P3] [P1; P2; P4] [P1; P3; P4] [P2; P3; P4]];
-    index = [1 4 7 10];
-    fill3(plane(:,index), plane(:,index+1), plane(:,index+2), Color);
-else
-    draw_Sierpinski_Triangle3D(P1, (P1+P2)/2, (P1+P3)/2, (P1+P4)/2, N-1);
-    draw_Sierpinski_Triangle3D(P2, (P2+P1)/2, (P2+P3)/2, (P2+P4)/2, N-1);
-    draw_Sierpinski_Triangle3D(P3, (P3+P1)/2, (P3+P2)/2, (P3+P4)/2, N-1);
-    draw_Sierpinski_Triangle3D(P4, (P4+P1)/2, (P4+P2)/2, (P4+P3)/2, N-1);
-end</code></pre>
-			
-			<p>扩展到三维也是很简单的，然而颜色的渐变不知道怎么处理，图像不好看。</p>
-			<div id="image"><img src="images/02.jpg" width="300px"></div>
-			<pre><code class="matlab">function draw_Sierpinski_Triangle2D(P1, P2, P3, N, options)  
-  
-% Sierpinski_Triangle 的基本单位是三角形  
-% P1, P2，P3是三角形的三顶点(必须是1*2的向量)，N是递归层数  
-% options(1)：线段宽度  
-% options(2:4)：线段颜色  
-  
-default_options = [3 0 1 0];  
-if nargin == 4  
-    options = default_options;  
-end  
-LineWidth = options(1);  
-Color = options(2:4);  
-  
-if N == 1  
-    plot([P1(1) P2(1) P3(1) P1(1)], [P1(2) P2(2) P3(2) P1(2)], ...  
-        'Color', Color, 'LineWidth', LineWidth, 'EraseMode', 'none');  
-else  
-    draw_Sierpinski_Triangle2D(P1, (P1+P2)/2, (P1+P3)/2, N-1, options);  
-    draw_Sierpinski_Triangle2D(P2, (P2+P1)/2, (P2+P3)/2, N-1, options);  
-    draw_Sierpinski_Triangle2D(P3, (P3+P1)/2, (P3+P2)/2, N-1, options);  
-end</code></pre>
+    fstream in;
+    in.open("file_directory.txt");
+
+    int id = 1;
+
+    // /*
+    string s;
+    while(getline(in, s))
+    {
+        if(s == "rename.cpp") continue;
+        if(s == "rename.o") continue;
+        if(s == "rename.exe") continue;
+        if(s == "file_directory.txt") continue;
+
+        // 进行转换
+        string op = "ren \"";
+        op += s + "\" \"";
+	// 目标文件名
+	op += "[HorribleSubs] Fate Zero - " + int2string(id++,2) + " [1080p]";
+	op += ".ass\"";
+        system(op.c_str());
+        cout &lt;&lt; op &lt;&lt; endl;
+    }
+
+    in.close();
+    system("del file_directory.txt");
+    // */
+
+    return 0;
+}</code></pre>
 		</div>
 	</div>
 	

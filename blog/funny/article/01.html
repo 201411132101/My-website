@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>Sierpinski三角形</title>
+<title>P站搜索高质量图片</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -64,58 +64,10 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle1">Sierpinski三角形</div>
-			<p>有意思的是，Sierpinski三角形和杨辉三角的01表示是对应的。</p>
-			<p>基本单位是三角形，对于原三角形，删去各边中点构成的小三角形，不断重复下去。</p>
-			
-			<div id="image"><img src="images/01.jpg" width="300px"></div>
-			<pre><code class="matlab">function draw_Sierpinski_Triangle3D(P1, P2, P3, P4, N, options)
-
-% Sierpinski_Triangle 的基本单位是三棱锥
-% P1, P2，P3, P4是三棱锥的四顶点(必须是1*3的向量)，N是递归层数
-% options：三棱柱表面颜色
-
-default_options = [0 1 0];
-if nargin == 5
-    options = default_options;
-end
-Color = options;
-
-if N == 1
-    plane = [[P1; P2; P3] [P1; P2; P4] [P1; P3; P4] [P2; P3; P4]];
-    index = [1 4 7 10];
-    fill3(plane(:,index), plane(:,index+1), plane(:,index+2), Color);
-else
-    draw_Sierpinski_Triangle3D(P1, (P1+P2)/2, (P1+P3)/2, (P1+P4)/2, N-1);
-    draw_Sierpinski_Triangle3D(P2, (P2+P1)/2, (P2+P3)/2, (P2+P4)/2, N-1);
-    draw_Sierpinski_Triangle3D(P3, (P3+P1)/2, (P3+P2)/2, (P3+P4)/2, N-1);
-    draw_Sierpinski_Triangle3D(P4, (P4+P1)/2, (P4+P2)/2, (P4+P3)/2, N-1);
-end</code></pre>
-			
-			<p>扩展到三维也是很简单的，然而颜色的渐变不知道怎么处理，图像不好看。</p>
-			<div id="image"><img src="images/02.jpg" width="300px"></div>
-			<pre><code class="matlab">function draw_Sierpinski_Triangle2D(P1, P2, P3, N, options)  
-  
-% Sierpinski_Triangle 的基本单位是三角形  
-% P1, P2，P3是三角形的三顶点(必须是1*2的向量)，N是递归层数  
-% options(1)：线段宽度  
-% options(2:4)：线段颜色  
-  
-default_options = [3 0 1 0];  
-if nargin == 4  
-    options = default_options;  
-end  
-LineWidth = options(1);  
-Color = options(2:4);  
-  
-if N == 1  
-    plot([P1(1) P2(1) P3(1) P1(1)], [P1(2) P2(2) P3(2) P1(2)], ...  
-        'Color', Color, 'LineWidth', LineWidth, 'EraseMode', 'none');  
-else  
-    draw_Sierpinski_Triangle2D(P1, (P1+P2)/2, (P1+P3)/2, N-1, options);  
-    draw_Sierpinski_Triangle2D(P2, (P2+P1)/2, (P2+P3)/2, N-1, options);  
-    draw_Sierpinski_Triangle2D(P3, (P3+P1)/2, (P3+P2)/2, N-1, options);  
-end</code></pre>
+			<div id="subtitle1">P站搜索高质量图片</div>
+			<p>在作品名后面加xxx users入り就能搜到高收藏量的文章。
+			作品名必须是日文，xxx必须是50，100，300，500，1000，5000，10000中的一个（我猜的）。</p>
+			<p>例：とらドラ!5000users入り。</p>
 		</div>
 	</div>
 	
