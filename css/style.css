@@ -27,14 +27,14 @@ pre {
 /* 页眉 */
 #header {
 	background:rgba(0,0,0, .6);
-	position:absolute;
-	zindex:999;
 }
 /* main menu styles */
 #nav {
     display:inline-block;
     margin:0;
     padding:0 0 0 200px;
+	position:absolute;
+	zindex:999;
 }
 #nav li {
     margin:0;
