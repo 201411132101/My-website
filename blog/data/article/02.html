@@ -6,12 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>数据分析</title>
+<title>拉格朗日插值</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
 <!--css-->
 <link href="https://201411132101.github.io/bufan/css/style.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body { 
 	background-image:url(https://201411132101.github.io/bufan/images/bg-blog.jpg);
@@ -62,9 +63,40 @@ body {
 	</div>
 	
 	<div id="page">
-	  <div id="left">
-			<div id="subtitle2"><a href="article/01.html">数据标准化</a></div>
-			<div id="subtitle2"><a href="article/02.html">拉格朗日插值</a></div>
+		<div id="left">
+			<div id="subtitle1"><p>拉格朗日插值</p></div>		 
+			
+			<div id="subtitle2"><p>一、定义</p></div>
+			<p>拉格朗日插值是一种数据拟合的方法。对于$n+1$组点对$(x_1,y_1),(x_2,y_2),\cdots,(x_{n+1},y_{n+1})$，其拟合结果为</p>
+			<p>$$P(x)=\sum_{i=0}^n(\prod_{j=0,j \neq i}^n \frac{x-x_j}{x_i-x_j})y_i,$$</p>
+			<p>将其用幂形式表示为</p>
+			<p>$$P(x)=\sum_{i=0}^n c_ix^i.$$</p>
+			
+			<div id="subtitle2"><p>二、方法一</p></div>
+		    <p>求解下面的线性方程组</p>
+            <p>$$\begin{pmatrix}
+x_0^n & x_0^{n-1} & \cdots & x_0 & 1\\ 
+x_1^n & x_1^{n-1} & \cdots & x_1 & 1\\ 
+\cdots & \cdots & \cdots & \cdots & 1\\ 
+x_n^n & x_n^{n-1} & \cdots & x_n & 1\\ 
+\end{pmatrix}
+\begin{pmatrix}
+c_n\\ 
+c_{n-1}\\ 
+\cdots\\ 
+c_0\\ 
+\end{pmatrix}
+=
+\begin{pmatrix}
+y_0\\ 
+y_1\\ 
+\cdots\\ 
+y_n\\ 
+\end{pmatrix}$$</p>
+		    <p>可以得到$P(x)$的各项系数。</p>
+		    <p>然而实际上大部分问题都是很难解出来的。</p>
+			<pre><code class="matlab">V = vander(x);
+c = V\y';</code></pre>
 		</div>
 	</div>
 	
@@ -90,6 +122,24 @@ image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height
 <script type="text/javascript">
 $(".snow-canvas").snow();
 </script>
+
+
+<!--mathjax -->
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<!--code -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script> 
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
 </body>
 
 </html>
+

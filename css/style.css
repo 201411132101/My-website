@@ -7,6 +7,10 @@ html,body {
 	font-size:15px;	
 }
 
+pre {
+	max-height：800px;
+}
+
 #image {
 	text-align:center;
 }
@@ -111,9 +115,6 @@ html,body {
 #left:hover {
 	background:rgba(246,244,236, .9);
 }
-#left p {
-	text-indent:30px;
-}
 
 #left a:link, #left a:visited, #left a:hover, #left a:active {
     text-decoration:none;
@@ -126,14 +127,17 @@ html,body {
 	margin:20px 0 20px 0;
 	padding:0;
 	text-align: center;
-	text-indent:0;
 	font-size:30px;
 }
 #subtitle2 {
 	margin:20px 0 20px 0;
 	padding:0;
-	text-indent:0;
 	font-size:25px;
+}
+#subtitle3 {
+	margin:20px 0 20px 0;
+	padding:0;
+	font-size:20px;
 }
 
 /* 页脚 */
