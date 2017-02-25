@@ -13,8 +13,8 @@
 
 #kotori {
 	position:absolute;
-	right:320px;
-	top:300px
+	right:20px;
+	bottom:0px
 }
 
 ::-webkit-scrollbar{width:5px;height:10px;}
