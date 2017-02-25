@@ -96,7 +96,7 @@ y_n\\
 		    <p>可以得到$P(x)$的各项系数。</p>
 		    <p>然而实际上大部分问题都是很难解出来的。</p>
 			<pre><code class="matlab">V = vander(x);
-c = V\y';</code></pre>
+c = V\y(:);</code></pre>
 		</div>
 	</div>
 	
@@ -126,7 +126,7 @@ $(".snow-canvas").snow();
 
 <!--mathjax -->
 <script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
