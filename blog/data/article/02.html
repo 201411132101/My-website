@@ -65,13 +65,13 @@ body {
 		<div id="left">
 			<div id="subtitle1"><p>拉格朗日插值</p></div>		 
 			
-			<div id="subtitle2"><p>一、定义</p></div>
+			<div id="subtitle2"><p>定义</p></div>
 			<p>拉格朗日插值是一种数据拟合的方法。对于$n+1$组点对$(x_1,y_1),(x_2,y_2),\cdots,(x_{n+1},y_{n+1})$，其拟合结果为</p>
 			<p>$$P(x)=\sum_{i=0}^n(\prod_{j=0,j \neq i}^n \frac{x-x_j}{x_i-x_j})y_i,$$</p>
 			<p>将其用幂形式表示为</p>
 			<p>$$P(x)=\sum_{i=0}^n c_ix^i.$$</p>
 			
-			<div id="subtitle2"><p>二、方法一</p></div>
+			<div id="subtitle2"><p>算法实现</p></div>
 		    <p>求解下面的线性方程组</p>
             <p>$$\begin{pmatrix}
 x_0^n & x_0^{n-1} & \cdots & x_0 & 1\\ 
@@ -93,9 +93,12 @@ y_1\\
 y_n\\ 
 \end{pmatrix}$$</p>
 		    <p>可以得到$P(x)$的各项系数。</p>
-		    <p>然而实际上大部分问题都是很难解出来的。</p>
 			<pre><code class="matlab">V = vander(x);
 c = V\y(:);</code></pre>
+			<div id="subtitle2"><p>注意事项</p></div>
+			<p>实际操作中，拉格朗日插值不是一个好的拟合方法，当拟合函数次数超过三次时，区间末端拟合效果一般很差。
+			可以使用多项式拟合，如果数据和多项式差别过大，应考虑其他的插值方法，如三次样条插值。</p>
+			<p>原函数：$f(x) = \frac{1}{1+x^2}$</p>
 		</div>
 	</div>
 	
