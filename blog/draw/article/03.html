@@ -36,8 +36,7 @@ body {
 			<li class="current"><a href="https://201411132101.github.io/bufan">首页</a></li>
 			<li><a href="javascript:void(0)">博客</a>
 				<ul>
-					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li> 
-					<li><a href="https://201411132101.github.io/bufan/blog/fractal">分形几何</a></li>
+					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/picture">图像处理</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/data">数据处理</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/matlab">matlab函数源代码分析</a></li>
@@ -68,7 +67,7 @@ body {
 			<p>有意思的是，Sierpinski三角形和杨辉三角的01表示是对应的。</p>
 			<p>基本单位是三角形，对于原三角形，删去各边中点构成的小三角形，不断重复下去。</p>
 			
-			<div id="image"><img src="images/01.jpg" width="300px"></div>
+			<div id="image"><img src="images/02.jpg" width="300px"></div>
 			<pre><code class="matlab">function draw_Sierpinski_Triangle3D(P1, P2, P3, P4, N, options)
 
 % Sierpinski_Triangle 的基本单位是三棱锥
@@ -93,7 +92,7 @@ else
 end</code></pre>
 			
 			<p>扩展到三维也是很简单的，然而颜色的渐变不知道怎么处理，图像不好看。</p>
-			<div id="image"><img src="images/02.jpg" width="300px"></div>
+			<div id="image"><img src="images/03.jpg" width="300px"></div>
 			<pre><code class="matlab">function draw_Sierpinski_Triangle2D(P1, P2, P3, N, options)  
   
 % Sierpinski_Triangle 的基本单位是三角形  
