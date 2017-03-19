@@ -63,8 +63,12 @@ body {
 	<div id="page">
 		<div id="left">
 			<div id="subtitle1"><p>Kohn雪花</p></div>	
-			<p>代码有些冗杂，坐标的转换让我很是不爽，需要学习一下高级的写法。</p>
-			<canvas id="test" width="600" height="600"></canvas>
+			<div align="center">
+				<canvas id="test" width="500" height="500"></canvas>
+				<script type="text/javascript" src="js/01.js"></script>
+				<button type="button" onClick="animation_start()">开始</button>
+				<button type="button" onClick="animation_stop()">停止</button>
+			</div>	
 		</div>
 	</div>
 	
@@ -72,68 +76,6 @@ body {
 		本网站是各种demo修改拼接而成，如有雷同，实属正常
 	</div>
 </div>
-
-<!--画图 -->
-<script type="text/javascript">
-var canvas = document.getElementById("test");
-var context = canvas.getContext('2d');
-var width = 600;
-var height = 600;
-
-// 坐标轴范围
-var xmin = -2;
-var xmax = 2;
-var ymin = -1.5;
-var ymax = 2.5;
-
-function draw_Kohn_Curve(P1x, P1y, P2x, P2y, N){
-	// P1，P2是线段的始末两点(必须是1*2的向量)，N是递归层数   
-	theta = Math.PI / 3;
-	  
-	if (N == 1){
-		context.beginPath();
-		context.lineTo(P1x, height-P1y);
-		context.lineTo(P2x, height-P2y);
-		context.stroke();
-		context.closePath();
-	}
-	else{
-		var midx = (P2x - P1x) / 3;  
-		var midy = (P2y - P1y) / 3;
-		var Lx = P1x + midx;  
-		var Ly = P1y + midy;
-		var Rx = P2x - midx;  
-		var Ry = P2y - midy; 
-		var Newx = Lx + midx * Math.cos(theta) - midy * Math.sin(theta);  
-		var Newy = Ly + midx * Math.sin(theta) + midy * Math.cos(theta); 
-		draw_Kohn_Curve(P1x, P1y, Lx, Ly, N-1);  
-		draw_Kohn_Curve(Lx, Ly, Newx, Newy, N-1);  
-		draw_Kohn_Curve(Newx, Newy, Rx, Ry, N-1);  
-		draw_Kohn_Curve(Rx, Ry, P2x, P2y, N-1);  
-	}
-}
-
-// draw
-var N = 1;
-var d = -1;
-function draw_snow(){
-	context.clearRect(0,0,width,height);
-	
-	draw_Kohn_Curve((1-xmin)/(xmax-xmin)*width, (0-ymin)/(ymax-ymin)*height,
-	(-1-xmin)/(xmax-xmin)*width, (0-ymin)/(ymax-ymin)*height, N);
-	
-	draw_Kohn_Curve((-1-xmin)/(xmax-xmin)*width, (0-ymin)/(ymax-ymin)*height,
-	(0-xmin)/(xmax-xmin)*width, (Math.sqrt(3)-ymin)/(ymax-ymin)*height, N);  
-	
-	draw_Kohn_Curve((0-xmin)/(xmax-xmin)*width, (Math.sqrt(3)-ymin)/(ymax-ymin)*height,
-	(1-xmin)/(xmax-xmin)*width, (0-ymin)/(ymax-ymin)*height, N); 
-	
-	if (N == 1 || N == 6) d = -d;
-	N += d;
-}
-
-setInterval("draw_snow()",500);
-</script>
 
 <!--music -->
 <audio id="music" src="https://201411132101.github.io/bufan/audios/noisy.mp3">
