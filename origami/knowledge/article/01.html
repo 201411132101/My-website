@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>折纸基础知识</title>
+<title>正方形裁最大正六边形</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -14,7 +14,7 @@
 <link href="https://201411132101.github.io/bufan/css/style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 body { 
-	background-image:url(https://201411132101.github.io/bufan/images/bg-origami.jpg);
+	background-image:url(https://201411132101.github.io/bufan/images/bg-blog.jpg);
 	background-color:black;
 }
 </style>
@@ -33,7 +33,7 @@ body {
 	<div id="header">
 		<ul id="nav">
 			<li><a href="https://201411132101.github.io/bufan">首页</a></li>
-			<li><a href="javascript:void(0)">博客</a>
+			<li class="current"><a href="javascript:void(0)">博客</a>
 				<ul>
 					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/picture">图像处理</a></li>
@@ -48,7 +48,7 @@ body {
 					<li><a href="https://201411132101.github.io/bufan/origami/example">折纸实例</a></li>
 				</ul>
 			</li>
-			<li class="current"><a href="javascript:void(0)">动漫</a>
+			<li><a href="javascript:void(0)">动漫</a>
 				<ul>
 					<li><a href="https://201411132101.github.io/bufan/animation/recommend">动漫推荐</a></li>
 					<li><a href="https://201411132101.github.io/bufan/animation/exhibition">漫展收获</a></li>
@@ -62,8 +62,12 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle2"><a href="article/01.html">正方形裁最大正六边形</a></div>
-			<div id="subtitle2"><a href="article/02.html">长方形裁最大正六边形</a></div>
+			<div id="subtitle1"><p>正方形裁最大正六边形</p></div>
+			<div align="center">
+				<canvas id="test" width="506" height="506"></canvas>
+				<script type="text/javascript" src="js/01.js"></script>
+			</div>	
+			<p>其最大性感觉是对的，严格证明待补。</p>
 		</div>
 	</div>
 	
@@ -88,6 +92,17 @@ end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false"
 image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height="667"></canvas> 
 <script type="text/javascript">
 $(".snow-canvas").snow();
+</script>
+
+
+<!--mathjax -->
+<script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
 </script>
 </body>
 
