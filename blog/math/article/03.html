@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>数学</title>
+<title>Lindelöf space</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -32,14 +32,15 @@ body {
 <div id="container">
 	<div id="header">
 		<ul id="nav">
-			<li class="current"><a href="https://201411132101.github.io/bufan">首页</a></li>
-			<li><a href="javascript:void(0)">博客</a>
+			<li><a href="https://201411132101.github.io/bufan">首页</a></li>
+			<li class="current"><a href="javascript:void(0)">博客</a>
 				<ul>
 					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/picture">图像处理</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/data">数据处理</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/matlab">matlab函数源代码分析</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/funny">黑科技</a></li>
+					<li><a href="https://201411132101.github.io/bufan/blog/math">数学</a></li>
 				</ul>
 			</li>
 			<li><a href="javascript:void(0)">折纸</a>
@@ -68,9 +69,17 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle2"><a href="article/01.html">Stirling's approximation</a></div>
-			<div id="subtitle2"><a href="article/02.html">e的情报</a></div>
-			<div id="subtitle2"><a href="article/03.html">Lindelöf space</a></div>
+			<div id="subtitle1">Lindelöf space</a></div>		 
+			
+			<div id="subtitle2"><p>定义</p></div>
+			<p><a href="https://en.wikipedia.org/wiki/Lindel%C3%B6f_space" target="_blank">Lindelöf space</a>
+			是每个开覆盖存在可数子覆盖的拓扑空间。它是
+			<a href="https://en.wikipedia.org/wiki/Compact_space" target="_blank">Compact space</a>
+			(每个开覆盖存在有限子覆盖的拓扑空间)的拓展。</p>
+			
+			<div id="subtitle2"><p>哪些空间是Lindelöf space?</p></div>
+			<p><a href="http://dml.cz/bitstream/handle/10338.dmlcz/118952/CommentatMathUnivCarolRetro_38-1997-3_11.pdf" target="_blank">
+			一篇论文</a>。</p>
 		</div>
 	</div>
 	
@@ -96,6 +105,17 @@ image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height
 <script type="text/javascript">
 $(".snow-canvas").snow();
 </script>
+
+<!--mathjax -->
+<script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
 </body>
 
 </html>
+
