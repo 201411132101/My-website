@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>e的情报</title>
+<title>Cantor Set</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -69,48 +69,23 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle1">e的情报</div>		 
+			<div id="subtitle1">Cantor Set</div>		 
 			
-			<p><a href="https://en.wikipedia.org/wiki/Stirling%27s_approximation" target="_blank">
-			e</a>是个有意思的数，它在很多领域中都有出现，研究它的性质很有必要。</p>
+			<p><a href="https://en.wikipedia.org/wiki/Cantor_set" target="_blank">Cantor Set</a></p>是个很牛的集合，
+			很多反例都要用到它。
 			
-			<div id="subtitle2"><p>定义</p></div>
-			<p>$$e=\lim _{n \to \infty} (1+\frac{1}{n})^n.$$</p>
-			
-			<div id="subtitle2"><p>e是个无理数</p></div>
-			<p>反证法，假设e是有理数，设$e=\frac{q}{p}$，下面我们观察式子</p>
-			<p>$$x = p! \left( e - \sum_{i=1}^p \frac{1}{i} \right)$$</p>
-			
-			<p>(1)首先，</p>
+			<div id="subtitle2"><p>构造过程</p></div>
 			<p>$$\begin{align}
-x &= p! \left( e - \sum_{i=1}^p \frac{1}{i!} \right) \\
-  &= p! \left( \frac{q}{p} - \sum_{i=1}^p \frac{1}{i!} \right) \\
-  &= q(p-1)! - \sum_{i=1}^p \frac{p!}{i!} 
-\end{align}.$$</p>
-			<p>故x是一个整数。</p>
-			
-			<p>(2)接下来，我们来估计x的范围，</p>
-			<p>$$\begin{align}
-0 < x &= p! \left( e - \sum_{i=1}^p \frac{1}{i!} \right) \\
-      &= p! \sum_{i=p+1}^{\infty} \frac{1}{i!} \\
-      &= \sum_{i=p+1}^{\infty} \frac{p!}{i!} \\
-	  &< \sum_{i=p+1}^{\infty} \frac{1}{(p+1)^{i-p}} = \frac{1}{p} < 1
+C_0 &= [0,1], \\
+C_n &= \frac{C_{n-1}}{3} \cup (\frac{2}{3} + \frac{C_{n-1}}{3}), \ for \ all \ n > 0 \\
+C   &= \bigcap_{n=1}^{\infty} C_n
 \end{align}.$$</p>
 
-			<p>综合(1)(2)，x是(0,1)中的整数，矛盾，故e是无理数。</p>
+			<p>其中C就是我们的Cantor Set。</p>
+			<p>用通俗的话来讲，就是每次切割把任意一段区间分成三段，取走中间的那段。</p>
 			
-			
-			<div id="subtitle2"><p>e的无穷级数展开</p></div>
-			<p>$$e = \sum_{i=0}^{\infty} \frac{1}{i!}$$</p>
-			
-			<div id="subtitle2"><p>e的一个有意思的逼近</p></div>
-			<p>由<a href="01.html">Stirling's approximation</a>我们知道</p>
-            <p>$$n! \sim \sqrt{2 \pi n} \left( \frac{n}{e} \right) ^n, n \to \infty.$$</p>
-			<p>变形一下可以得到e的另一个逼近</p>
-			<p>$$e=\lim _{n \to \infty} \frac{n}{\sqrt[n]{n!}}).$$</p>
-			
-			<div id="subtitle2"><p>不同方式逼近e的速度</p></div>
-			
+			<div id="subtitle2"><p>Cantor Set 和实数集等势</p></div>
+			<p></p>
 		</div>
 	</div>
 	
