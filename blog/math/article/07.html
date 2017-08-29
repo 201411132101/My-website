@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>Cantor 函数</title>
+<title>Gaussian integral</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -69,20 +69,25 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle1">Cantor 函数</a></div>		 
+			<div id="subtitle1">Gaussian integral</a></div>	
+			这个<a href="https://en.wikipedia.org/wiki/Gaussian_integral" target="_blank">Gaussian integral</a>
+			就是对<a href="https://en.wikipedia.org/wiki/Gaussian_function" target="_blank">Gaussian function</a>进行积分，
+			下面只对最简形式进行计算。	 
 			
-			<div id="subtitle2"><p>定义</p></div>
-			<p>对于Cantor Set $C$，
-			$$ \forall x \in C, \ x = 2 \sum_{n=0}^{\infty} \frac{\alpha_i}{3^i}, 
-			\ \alpha_i \in \{0, 1\}. $$</p>
-			<p>可以用归纳法证明。</p>
+			<div id="subtitle2"><p>一个很漂亮的结果</p></div>
+			<p>$$\int_{-\infty}^{+\infty} e^{-x^2} \ dx = \sqrt{\pi}$$</p>
+			<p>证明需要开一点脑洞，不过在各路大神的努力下，证法非常多。</p>
 			
-			<p>故可定义Cantor 函数</p>
-			<p>$$f(2 \sum_{n=0}^{\infty} \frac{\alpha_i}{3^i}) = \sum_{n=0}^{\infty} \frac{\alpha_i}{2^i},
-			\ \alpha_i \in \{0, 1\}. $$</p>
-			
-			<div id="subtitle2"><p>Cantor函数连续</p></div>
-			<p></p>
+			<div id="subtitle2"><p>证法1</p></div>
+			<p>$$\begin{align}
+\left( \int_{-\infty}^{+\infty} e^{-x^2} \ dx \right)^2 
+	&= \int_{-\infty}^{+\infty} e^{-x^2} \ dx \int_{-\infty}^{+\infty} e^{-y^2} \ dy \\
+	&= \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} e^{-(x^2+y^2)} \ dx \ dy \\
+	&= \int_{0}^{+\infty} \int_{0}^{2\pi} re^{-r^2} \ dr \ d\theta \\
+	&= 2\pi \int_{0}^{+\infty} re^{-r^2} \ dr \\
+	&= 2\pi (-\frac{1}{2} e^{-r^2}) \bigg|_{0}^{+\infty} \\
+	&= \pi
+\end{align}$$</p>
 		</div>
 	</div>
 	
