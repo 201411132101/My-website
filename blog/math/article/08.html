@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="toTop" content="true">
 
-<title>数学</title>
+<title>定积分在几何上的应用</title>
 
 <link rel="shortcut icon" href="https://201411132101.github.io/bufan/favicon.ico">
 
@@ -32,14 +32,15 @@ body {
 <div id="container">
 	<div id="header">
 		<ul id="nav">
-			<li class="current"><a href="https://201411132101.github.io/bufan">首页</a></li>
-			<li><a href="javascript:void(0)">博客</a>
+			<li><a href="https://201411132101.github.io/bufan">首页</a></li>
+			<li class="current"><a href="javascript:void(0)">博客</a>
 				<ul>
 					<li><a href="https://201411132101.github.io/bufan/blog/draw">画图</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/picture">图像处理</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/data">数据处理</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/matlab">matlab函数源代码分析</a></li>
 					<li><a href="https://201411132101.github.io/bufan/blog/funny">黑科技</a></li>
+					<li><a href="https://201411132101.github.io/bufan/blog/math">数学</a></li>
 				</ul>
 			</li>
 			<li><a href="javascript:void(0)">折纸</a>
@@ -68,14 +69,43 @@ body {
 	
 	<div id="page">
 		<div id="left">
-			<div id="subtitle2"><a href="article/01.html">Stirling's approximation</a></div>
-			<div id="subtitle2"><a href="article/02.html">e的情报</a></div>
-			<div id="subtitle2"><a href="article/03.html">Lindelöf space</a></div>
-			<div id="subtitle2"><a href="article/04.html">Cantor 三分集</a></div>
-			<div id="subtitle2"><a href="article/05.html">Cantor 函数</a></div>
-			<div id="subtitle2"><a href="article/06.html">连续函数与可测集</a></div>
-			<div id="subtitle2"><a href="article/07.html">Gaussian integral</a></div>
-			<div id="subtitle2"><a href="article/08.html">定积分在几何上的应用</a></div>
+			<div id="subtitle1"><p>定积分在几何上的应用</p></div>	
+			
+			<br><!--part 1 -->
+			<div id="subtitle3"><p>一、函数：$y=f(x), \ x \in [a,b]$</p></div>
+			<p>(1) 曲线长度</p>
+			<p>$$ L = \int_a^b \sqrt{1+(y')^2} \ dx$$</p>
+			
+			<p>(2) 与$x$轴所围图形面积</p>
+			<p>$$ S = \int_a^b |y| \ dx$$</p>
+			
+			<p>(3) 绕$x$轴旋转所得旋转体体积</p>
+			<p>$$ V = \pi \int_a^b y^2 \ dx$$</p>
+			
+			<p>(4) 绕$x$轴旋转所得旋转体表面积</p>
+			<p>$$ V = 2\pi \int_a^b |y|\sqrt{1+(y')^2} \ dx$$</p>
+			
+			<br><!--part 2 -->
+			<div id="subtitle3"><p>二、参数方程：$x=x(t), \ y=y(t), \ t \in [a,b]$</p></div>
+			<p>(1) 曲线长度</p>
+			<p>$$ L = \int_a^b \sqrt{(x')^2+(y')^2} \ dt$$</p>
+			
+			<p>(2) 与$x$轴所围图形面积</p>
+			<p>$$ S = \int_a^b |x'y| \ dt$$</p>
+			
+			<p>(3) 绕$x$轴旋转所得旋转体体积</p>
+			<p>$$ V = \pi \int_a^b |x'| y^2 \ dt$$</p>
+			
+			<p>(4) 绕$x$轴旋转所得旋转体表面积</p>
+			<p>$$ V = 2\pi \int_a^b |y|\sqrt{(x')^2+(y')^2} \ dt$$</p>
+			
+			<br><!--part 3 -->
+			<div id="subtitle3"><p>三、极坐标：$r=r(\theta), \ \theta \in [a,b]$</p></div>
+			<p>(1) 曲线长度</p>
+			<p>$$ L = \int_a^b \sqrt{r^2+(y')^2} \ dt$$</p>
+			
+			<p>(2) 所围图形面积</p>
+			<p>$$ S = \frac{1}{2} \int_a^b r^2 \ dt$$</p>
 		</div>
 	</div>
 	
@@ -101,6 +131,17 @@ image="https://201411132101.github.io/bufan/images/snow.png" width="1366" height
 <script type="text/javascript">
 $(".snow-canvas").snow();
 </script>
+
+<!--mathjax -->
+<script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
 </body>
 
 </html>
+
