@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {	
 			if($("meta[name=toTop]").attr("content")=="true"){
-				$("<div id='toTop'><img src='https://201411132101.github.io/bufan/images/top.png'></div>").appendTo('body');
+				$("<div id='toTop'><img src='https://bufan.xyz/images/top.png'></div>").appendTo('body');
 				$("#toTop").css({
 					width: '50px',
 					height: '50px',
